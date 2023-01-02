@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <title>Открытка</title>
+    <style media="screen">
+    @font-face {
+     font-family: 'Halvar';
+     src: url("font/Halvar.woff") format('woff');
+    }
+      #grid_section {
+        position: relative;
+        display: grid;
+        grid-template:
+        "s1     s1     s2     s2     s2"     215px
+        "s3     s3     s3     s3     s4"     86px
+        "s5     s6     s6     s6     s4"     157px
+        "s7     s6     s6     s6     s4"     71px
+        "s8     s8     s8     s9     s9"     86px
+        "s10    s10    s10    s9     s9"     285px
+        "s11    s11    s11    s11    s11"    30px
+        /99px   66px   32px  66px   165px
+        ;
+        grid-gap: 0;
+        margin-left: 0px;
+        margin-right: 0px;
+        top: 0px;
+        /* margin-bottom: 0px; */
+        height: 100%;
+        width: 100%;
+      }
+      .screen {
+        margin: 0;
+        position: relative;
+        height: 926px;
+        width: 428px;
+        background-color: #E7E7E7;
+      }
+      .s1 {
+        position: relative;
+        display: block;
+        grid-area: s1;
+        background-size: contain;
+      }
+      .tree1 {
+        position: relative;
+        width: 106px;
+        height: 184px;
+        background: url('img/tree1.png');
+        background-repeat: no-repeat;
+        margin-left: calc(50% - 48px);
+        margin-top: 20px;
+      }
+      .s2 {
+        position: relative;
+        display: block;
+        grid-area: s2;
+        background-size: contain;
+        background-color: #319552;
+      }
+      .star1 {
+        position: absolute;
+        background: url('img/star.png');
+        height: 88px;
+        width: 88px;
+        background-repeat: no-repeat;
+        left: 12px;
+        top: 18px;
+        animation-name: rotation;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+      .star2 {
+        position: absolute;
+        background: url('img/star.png');
+        height: 88px;
+        width: 88px;
+        background-repeat: no-repeat;
+        left: 164px;
+        top: 50px;
+        animation-name: rotation2;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+      .star3 {
+        position: absolute;
+        background: url('img/star.png');
+        height: 88px;
+        width: 88px;
+        background-repeat: no-repeat;
+        left: 100px;
+        top: 120px;
+        animation-name: rotation;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+      .s3 {
+        position: relative;
+        display: block;
+        grid-area: s3;
+        background-size: contain;
+        background-color: #ED5D42;
+      }
+      .p1 {
+        position: relative;
+        font-size: 60px;
+        font-family: 'Halvar';
+        margin-top: 10px;
+        margin-left: -5px;
+        color: #FFFFFF;
+      }
+      .scroll {
+        position: relative;
+        behavior: alternate;
+        direction: right;
+        loop: 100;
+        /* margin-top: 10px; */
+      }
+      .s4 {
+        position: relative;
+        display: block;
+        grid-area: s4;
+        background-size: contain;
+        background-color: #50B5FF;
+      }
+      .snow2 {
+        position: relative;
+        background: url('img/snow2.png');
+        height: 288px;
+        width: 148px;
+        background-repeat: no-repeat;
+        margin-left: 8.78px;
+        margin-top: 14px;
+      }
+      .s5 {
+        position: relative;
+        display: block;
+        grid-area: s5;
+        background-size: contain;
+        background-color: #50B5FF;
+      }
+      .snow1 {
+        position: relative;
+        background: url('img/snow1.png');
+        height: 130px;
+        width: 87px;
+        background-repeat: no-repeat;
+        margin-left: 6px;
+        margin-top: 19px;
+      }
+      .s6 {
+        position: relative;
+        display: block;
+        grid-area: s6;
+        background-size: contain;
+        border: 2px solid #319552;
+      }
+      .p2 {
+        position: relative;
+        font-size: 20px;
+        font-family: Halvar;
+        text-align: center;
+        margin-left: 5px;
+        margin-top: 10px;
+        line-height: 23px;
+        font-family: 'Halvar';
+      }
+      .s7 {
+        position: relative;
+        display: block;
+        grid-area: s7;
+        background-size: contain;
+      }
+      .eye1 {
+        position: relative;
+        background: url('img/eye1.png');
+        height: 53px;
+        width: 80px;
+        background-repeat: no-repeat;
+        margin-left: 9px;
+        margin-top: 9px;
+      }
+      .eye2 {
+        position: absolute;
+        background: url('img/eye2.png');
+        height: 21px;
+        width: 65px;
+        background-repeat: no-repeat;
+        margin-left: 4px;
+        top: 16px;
+        animation-name: move;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+      .s8 {
+        position: relative;
+        display: block;
+        grid-area: s8;
+        background-size: contain;
+        background-color: #ED5D42;
+      }
+      .div_s8 {
+        position: relative;
+        margin-top: 10px;
+        margin-left: 10px;
+      }
+      .s9 {
+        position: relative;
+        display: block;
+        grid-area: s9;
+        background-size: contain;
+      }
+      .tree2 {
+        position: relative;
+        width: 188px;
+        height: 335px;
+        background: url('img/tree2.png');
+        background-repeat: no-repeat;
+        margin-left: calc(50% - 85.5px);
+        margin-top: 20px;
+      }
+      .s10 {
+        position: relative;
+        display: block;
+        grid-area: s10;
+        background-size: contain;
+        background-color: #319552;
+      }
+      .star4 {
+        position: absolute;
+        background: url('img/star.png');
+        height: 88px;
+        width: 88px;
+        background-repeat: no-repeat;
+        left: 11px;
+        top: 27px;
+        animation-name: rotation;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+      .star5 {
+        position: absolute;
+        background: url('img/star.png');
+        height: 88px;
+        width: 88px;
+        background-repeat: no-repeat;
+        left: 106px;
+        top: 86px;
+        animation-name: rotation2;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+      .star6 {
+        position: absolute;
+        background: url('img/star.png');
+        height: 88px;
+        width: 88px;
+        background-repeat: no-repeat;
+        left: 49px;
+        top: 175px;
+        animation-name: rotation;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+      .s11 {
+        position: relative;
+        display: block;
+        grid-area: s11;
+        background-size: contain;
+        background-color: #ED5D42;
+      }
+      .p3 {
+        position: relative;
+        font-size: 20px;
+        font-family: Halvar;
+        margin-left: 10px;
+        margin-top: 4px;
+        font-family: 'Halvar';
+        color: #FFFFFF;
+      }
+      @keyframes rotation {
+        0% {
+              transform:rotate(0deg);
+          }
+          100% {
+              transform:rotate(360deg);
+          }
+      }
+      @keyframes rotation2 {
+        0% {
+              transform:rotate(0deg);
+          }
+          100% {
+              transform:rotate(-360deg);
+          }
+      }
+      @keyframes move {
+        0% {left: 0%;}
+        50% {left: 10%;}
+        100% {left: 0%;}
+      }
+    </style>
+  </head>
+  <body>
+    <div class="screen">
+      <div id="grid_section" class="">
+        <div class="s1">
+          <div class="tree1"></div>
+          <div class="eye1">
+            <div class="eye_star1"></div>
+          </div>
+          <div class="eye1">
+            <div class="eye_star1"></div>
+          </div>
+        </div>
+        <div class="s2">
+          <div class="star1"></div>
+          <div class="star2"></div>
+          <div class="star3"></div>
+        </div>
+        <div class="s3">
+          <marquee class "scroll" scrolldelay="20" truespeed>
+            <p class = "p1">С НОВЫМ ГОДОМ</p>
+          </marquee>
+        </div>
+        <div class="s4">
+          <div class="snow2"></div>
+        </div>
+        <div class="s5">
+          <div class="snow1"></div>
+        </div>
+        <div class="s6">
+          <p class = "p2">пусть новый год принесет хорошее настроение, счастье и&nbsp;радость, а&nbsp;главное - здоровье.</p>
+        </div>
+        <div class="s7">
+          <div class="eye1">
+            <div class="eye2"></div>
+          </div>
+        </div>
+        <div class="s8">
+          <div class="div_s8">
+            <p class = "p1">2023</p>
+          </div>
+        </div>
+        <div class="s9">
+          <div class="tree2"></div>
+        </div>
+
+        <div class="s10">
+          <div class="star4"></div>
+          <div class="star5"></div>
+          <div class="star6"></div>
+        </div>
+        <div class="s11">
+          <p class="p3">Для дяди Саши от Ани</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
